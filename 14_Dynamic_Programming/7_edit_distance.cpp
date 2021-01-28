@@ -16,9 +16,9 @@ class Solution
 	        if(dp[n][m]!=-1) return dp[n][m];
 	        if(s[n]==t[m]) return dp[n][m]=helper(s,t,n-1,m-1);
 	        
-	        int a=helper(s,t,n-1,m-1);
-	        int b=helper(s,t,n,m-1);
-	        int c=helper(s,t,n-1,m);
+	        int a=helper(s,t,n-1,m-1); //replace
+	        int b=helper(s,t,n,m-1);//insert
+	        int c=helper(s,t,n-1,m);//remove
 	        
 	        return dp[n][m]=1+min(a,min(b,c));
 	    }
